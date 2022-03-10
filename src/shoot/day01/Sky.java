@@ -1,4 +1,4 @@
-package shoot;
+package shoot.day01;
 
 public class Sky {
     int width;

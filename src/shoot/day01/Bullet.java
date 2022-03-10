@@ -1,6 +1,6 @@
-package shoot;
+package shoot.day01;
 
-public class Airplane {
+public class Bullet {
     int width;
     int height;
     int x;
@@ -8,6 +8,6 @@ public class Airplane {
     int speed;
 
     void step(){
-        System.out.println("敌机向下移动,y++");
+        System.out.println("子弹向上移动");
     }
 }
