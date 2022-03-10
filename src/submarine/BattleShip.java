@@ -4,11 +4,7 @@ public class BattleShip extends SeaObject{
     int life;
 
     public BattleShip() {
-        this.width = 66;
-        this.height = 26;
-        this.x = 270;
-        this.y = 124;
-        this.speed = 20;
+        super(66,26,270,124,20);
         this.life = 10;
     }
 
