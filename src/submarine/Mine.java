@@ -1,13 +1,16 @@
 package submarine;
 
-public class Mine {
-    int width;
-    int height;
-    int x;
-    int y;
-    int speed;
+import java.util.Random;
 
-    void move(){
-        System.out.println("Mine moving to the top!");
+public class Mine extends SeaObject{
+
+    public Mine(int x, int y) {
+        Random rand=new Random(); ///随机数对象
+        width=11;
+        height=11;
+        this.x=x;
+        this.y= y;
+        speed=rand.nextInt(3)+1; //1~3之间
     }
+
 }

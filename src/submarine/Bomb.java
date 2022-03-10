@@ -1,13 +1,13 @@
 package submarine;
 
-public class Bomb {
-    int width;
-    int height;
-    int x;
-    int y;
-    int speed;
+public class Bomb extends SeaObject{
 
-    void move(){
-        System.out.println("Bomb向上");
+    public Bomb(  int x, int y ) {
+        this.width = 9;
+        this.height = 12;
+        this.x = x;
+        this.y = y;
+        this.speed = 3;
     }
+
 }
