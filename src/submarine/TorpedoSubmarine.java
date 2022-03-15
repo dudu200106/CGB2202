@@ -1,6 +1,6 @@
 package submarine;
 
-import java.util.Random;
+import javax.swing.*;
 
 public class TorpedoSubmarine extends SeaObject{
 
@@ -8,4 +8,13 @@ public class TorpedoSubmarine extends SeaObject{
         super(64,20); //调用父类的构造方法, 随机生成对象
     }
 
+    @Override
+    public void move() {
+        x+=speed;
+    }
+
+    @Override
+    public ImageIcon getImage() {
+        return Images.torpesubm;
+    }
 }

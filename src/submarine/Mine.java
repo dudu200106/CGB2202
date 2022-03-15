@@ -1,6 +1,6 @@
 package submarine;
 
-import java.util.Random;
+import javax.swing.*;
 
 public class Mine extends SeaObject{
 
@@ -8,4 +8,13 @@ public class Mine extends SeaObject{
         super(11,11,x,y,3);
     }
 
+    @Override
+    public void move() {
+        y-=speed;
+    }
+
+    @Override
+    public ImageIcon getImage() {
+        return Images.mine;
+    }
 }
