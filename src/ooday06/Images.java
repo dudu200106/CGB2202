@@ -1,6 +1,6 @@
-package submarine;
+package ooday06;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 public class Images {
     public static ImageIcon batteship;

@@ -1,8 +1,8 @@
-package submarine;
+package ooday06;
 
 import javax.swing.*;
 
-public class ObserveSubmarine extends SeaObject{
+public class ObserveSubmarine extends SeaObject {
 
     public ObserveSubmarine(){
         super(63,19);

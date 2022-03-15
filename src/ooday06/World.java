@@ -1,8 +1,8 @@
-package submarine;
+package ooday06;
 
 //import javax.swing.*;  不建议全部导入,加载时效率低
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+
+import javax.swing.*;
 import java.awt.*;
 
 public class World extends JPanel{

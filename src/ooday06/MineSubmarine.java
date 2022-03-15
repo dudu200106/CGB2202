@@ -1,10 +1,10 @@
-package submarine;
+package ooday06;
 
 import javax.swing.*;
 
-public class ObserveSubmarine extends SeaObject{
+public class MineSubmarine extends SeaObject {
 
-    public ObserveSubmarine(){
+    public MineSubmarine(  ) {
         super(63,19);
     }
 
@@ -15,7 +15,7 @@ public class ObserveSubmarine extends SeaObject{
 
     @Override
     public ImageIcon getImage() {
-        return Images.obsersubm;
+        return Images.minesubm;
     }
 
 }

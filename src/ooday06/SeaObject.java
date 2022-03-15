@@ -1,7 +1,7 @@
-package submarine;
+package ooday06;
 
-import javax.swing.ImageIcon;
-import java.awt.Graphics;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Random;
 
 public abstract class SeaObject {
