@@ -3,9 +3,11 @@ package submarine;
 import javax.swing.*;
 
 public class ObserveSubmarine extends SeaObject{
+    public String name ="ObserveSub";
 
     public ObserveSubmarine(){
         super(63,19);
+        move();
     }
 
     @Override
