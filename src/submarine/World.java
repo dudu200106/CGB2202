@@ -112,7 +112,7 @@ public class World extends JPanel{
         frame.setSize(WIDTH+16,HEIGHT+39);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);// 设置窗口可见, 开始调用paint方法
-jkl
+
         world.action(); //启动程序的执行
     }
 }
