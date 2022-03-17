@@ -13,6 +13,10 @@ public class Bomb extends SeaObject{
         y+=speed;
     }
 
+    public boolean isOutOfBound(){
+        return this.y>=World.HEIGHT;
+    }
+
     @Override
     public ImageIcon getImage() {
         return Images.bomb;

@@ -4,6 +4,8 @@ package submarine;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Graphics;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -20,13 +22,6 @@ public class World extends JPanel{
     private ArrayList<Mine> mines = new ArrayList<>();
     private ArrayList<Bomb> bombs = new ArrayList<>();
 
-    /*private Mine[] mines = {
-            new Mine(260,200)
-    };
-    private Bomb[] bombs = {
-            new Bomb(200,120)
-    };*/
-
     /** 重写paint()画 g:画笔-----------不要求掌握 */
     @Override
     public void paint(Graphics g){ //每次刷新,
@@ -36,19 +31,32 @@ public class World extends JPanel{
 
         for(SeaObject ele: submarines){ //遍历所有潜艇
             ele.paintImage(g); //画潜艇
-            ele.move();
+
         }
         for(Mine e: mines){ //遍历所有水雷
             e.paintImage(g); //画水雷
-            e.move();
+
         }
         for(Bomb e: bombs){ //遍历所有深水炸弹
             e.paintImage(g); //画深水炸弹
-            e.move();
+
         }
     }
 
     public void action(){
+        KeyAdapter k=new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) { //当按键抬起时会自动执行
+                if (e.getKeyCode()==KeyEvent.VK_SPACE) {
+                    Bomb obj=ship.shootBomb();
+                    bombs.add(obj);
+                }
+                if (e.getKeyCode()==KeyEvent.VK_LEFT);
+                if (e.getKeyCode()==KeyEvent.VK_RIGHT);
+            }
+        };
+        this.addKeyListener(k);
+
         Timer timer=new Timer(); //定时器对象
         int interval=10; //时间间隔(毫秒)
         timer.schedule(new TimerTask() { //定义,新建了一个TimerTask的匿名内部类对象(它的派生类的对象)--向上构造,代码简洁
@@ -57,9 +65,29 @@ public class World extends JPanel{
                 submarineEnterAction();
                 mineEnterAction();
                 moveAction();
+                OutOfBoundAction();
+                System.out.println(submarines.size() +" "+ bombs.size()); //检测有没有删除越界潜艇
                 repaint(); //重画,重新调用paint方法
             }
         },interval,interval);
+    }
+
+    private void OutOfBoundAction() {//每10毫秒走一次
+        for (int i = 0; i < submarines.size(); i++) {
+            if (submarines.get(i).isOutOfBound()){
+                submarines.remove(i);
+            }
+        }
+        for (int i = 0; i < mines.size(); i++) {
+            if (mines.get(i).isOutOfBound()){
+                mines.remove(i);
+            }
+        }
+        for (int i = 0; i < bombs.size(); i++) {
+            if (bombs.get(i).isOutOfBound()){
+                bombs.remove(i);
+            }
+        }
     }
 
     private int subEnterIndex=0;

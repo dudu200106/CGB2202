@@ -17,4 +17,8 @@ public class Mine extends SeaObject{
     public ImageIcon getImage() {
         return Images.mine;
     }
+
+    public boolean isOutOfBound(){
+        return this.y<=150-this.height;
+    }
 }

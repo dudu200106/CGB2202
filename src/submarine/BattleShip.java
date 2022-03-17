@@ -11,6 +11,14 @@ public class BattleShip extends SeaObject{
         this.life = 10;
     }
 
+    public void moveLeft() {
+        x-=speed;
+    }
+
+    public void moveRight() {
+        x+=speed;
+    }
+
     @Override
     public void move() {
 
@@ -19,5 +27,9 @@ public class BattleShip extends SeaObject{
     @Override
     public ImageIcon getImage() {
         return Images.batteship;
+    }
+
+    public Bomb shootBomb(){
+        return new Bomb(this.x,this.y);
     }
 }

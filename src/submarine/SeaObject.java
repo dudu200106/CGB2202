@@ -50,6 +50,10 @@ public abstract class SeaObject {
         return state==DIED;
     }
 
+    public boolean isOutOfBound(){
+        return this.x>=World.WIDTH;
+    }
+
     /** 画对象 g:画笔 */
     public void paintImage(Graphics g){
         if(this.isLive()){ //若活着的
