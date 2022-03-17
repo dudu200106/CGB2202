@@ -2,7 +2,7 @@ package submarine;
 
 import javax.swing.*;
 
-public class TorpedoSubmarine extends SeaObject{
+public class TorpedoSubmarine extends SeaObject implements EnemyScore{
     public String name="TorpedoSub";
 
     public TorpedoSubmarine( ) {
@@ -17,5 +17,10 @@ public class TorpedoSubmarine extends SeaObject{
     @Override
     public ImageIcon getImage() {
         return Images.torpesubm;
+    }
+
+    @Override
+    public int getScore() {
+        return 40;
     }
 }

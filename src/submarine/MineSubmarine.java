@@ -2,7 +2,7 @@ package submarine;
 
 import javax.swing.*;
 
-public class MineSubmarine extends SeaObject{
+public class MineSubmarine extends SeaObject implements EnemyLife{
     public String name="MineSub";
 
     public MineSubmarine(  ) {
@@ -23,5 +23,10 @@ public class MineSubmarine extends SeaObject{
         int x=this.x+this.width;
         int y=this.y-5;
         return new Mine(x,y);
+    }
+
+    @Override
+    public int getLife() {
+        return 1;
     }
 }
