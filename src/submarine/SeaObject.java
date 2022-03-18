@@ -40,18 +40,40 @@ public abstract class SeaObject {
 
     public abstract ImageIcon getImage();
 
-    /*对象是否活着*/
+    /** 对象是否活着*/
     public boolean isLive(){
         return state==LIVE;
     }
 
-    /*对象是否死了*/
-    public boolean isDIED(){
+    /** 对象是否死了*/
+    public boolean isDead(){
         return state==DIED;
     }
 
+    /** 是否越界*/
     public boolean isOutOfBound(){
         return this.x>=World.WIDTH;
+    }
+
+    /**
+     * 检测碰撞
+     * @param other 传入的另一个海类对象
+     * @return 是否碰撞
+     */
+    public boolean isHit(SeaObject other){
+        //领空范围
+        int x1=this.x-other.width;
+        int y1=this.y-other.height;
+        int x2=this.x+this.width;
+        int y2=this.y+this.height;
+        if (other.x>=x1 &&other.x<=x2)
+            if (other.y>=y1 && other.y<=y2)
+                return true;
+        return false;
+    }
+
+    public void goDead(){
+        state=DIED;
     }
 
     /** 画对象 g:画笔 */

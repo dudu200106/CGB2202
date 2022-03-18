@@ -24,6 +24,15 @@ public class BattleShip extends SeaObject{
 
     }
 
+    public int getLife(){ return life; }
+
+    public void addLife(int num){
+        life+=num;
+    }
+    public void reduceLife(){
+        life-=1;
+    }
+
     @Override
     public ImageIcon getImage() {
         return Images.batteship;
